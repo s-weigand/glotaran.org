@@ -23,3 +23,5 @@ yarn-error.log*
 # webstorm settings and dictionaries
 .idea
 
+# Astro build folder
+.astro

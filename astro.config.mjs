@@ -2,9 +2,20 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import tailwind from '@astrojs/tailwind'
 import compress from 'astro-compress'
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  integrations: [mdx(), tailwind(), compress()],
+  integrations: [
+    mdx(),
+    tailwind(),
+    compress(),
+    icon({
+      include: {
+        mdi: ['*'], // Loads entire Material Design Icon set
+        ion: ['*'], // Loads entire Ion Icon set
+      },
+    }),
+  ],
 })
